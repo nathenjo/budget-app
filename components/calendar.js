@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import $ from 'jquery';
 
 export default function Calendar(props) {
 
@@ -22,6 +23,7 @@ export default function Calendar(props) {
         initCal();
         setCalTitle(titleDate.toLocaleString('en-us',{month:'long', year:'numeric'}));
         setSelectedDay(titleDate.getDate());
+        styleSelectedDay();
     }, [])
 
     // Updates calendar info when currentDay is changed
@@ -30,6 +32,7 @@ export default function Calendar(props) {
         setLastDay(getLastDay(titleDate.getFullYear(), titleDate.getMonth()));
         initCal();
         setCalTitle(titleDate.toLocaleString('en-us',{month:'long', year:'numeric'}));
+        styleSelectedDay();
     }, [currentDay, lastDay])
 
     // Gets the last date for the currentDay month
@@ -83,7 +86,9 @@ export default function Calendar(props) {
 
     const styleSelectedDay = () => {
         let selDate = new Date(currentDay);
-        
+        if ($('td').val() == selectedDay) {
+            $(this).addClass('selected-day');
+        }
     }
 
     return (
@@ -96,13 +101,13 @@ export default function Calendar(props) {
             <table>
                 <tbody>
                     <tr>
-                        <td>Sunday</td>
-                        <td>Monday</td>
-                        <td>Tuesady</td>
-                        <td>Wednesday</td>
-                        <td>Thursday</td>
-                        <td>Friday</td>
-                        <td>Saturday</td>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesady</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
                     </tr>
                     <tr>
                         {weekOne.map((item, index) => {
