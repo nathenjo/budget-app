@@ -33,7 +33,7 @@ export default function Calendar(props) {
         initCal();
         setCalTitle(titleDate.toLocaleString('en-us',{month:'long', year:'numeric'}));
         styleSelectedDay();
-    }, [currentDay, lastDay])
+    }, [currentDay, lastDay, selectedDay])
 
     // Gets the last date for the currentDay month
     const getLastDay = (y,m) => {
@@ -84,10 +84,26 @@ export default function Calendar(props) {
         setCurrentDay(nextDate.setMonth(nextDate.getMonth() - 1));
     }
 
-    const styleSelectedDay = () => {
-        let selDate = new Date(currentDay);
-        if ($('td').val() == selectedDay) {
-            $(this).addClass('selected-day');
+    const styleSelectedDay = (e) => {
+        if (e) {
+            let dayArray = Array.prototype.slice.call(document.querySelectorAll('td'));
+            if (e.target.innerText == selectedDay) {
+                setSelectedDay(0);
+                dayArray.map(item => {
+                    if (item.innerText == e.target.innerText) {
+                        item.classList.remove('selected-day');
+                    }
+                })
+            } else {
+                dayArray.map(item => {
+                    if (item.innerText == e.target.innerText) {
+                        item.classList.add('selected-day');
+                        setSelectedDay(e.target.innerText);
+                    } else {
+                        item.classList.remove('selected-day');
+                    }
+                })
+            }
         }
     }
 
@@ -111,32 +127,32 @@ export default function Calendar(props) {
                     </tr>
                     <tr>
                         {weekOne.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                     <tr>
                         {weekTwo.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                     <tr>
                         {weekThree.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                     <tr>
                         {weekFour.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                     <tr>
                         {weekFive.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                     <tr>
                         {weekSix.map((item, index) => {
-                            return <td className='cal-row-cell' key={index}>{item}</td>
+                            return <td onClick={(e) => styleSelectedDay(e)} className='cal-row-cell' key={index}>{item}</td>
                         })}
                     </tr>
                 </tbody>
