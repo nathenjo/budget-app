@@ -1,7 +1,12 @@
 $background: #260000;
 $black: #010608;
-$white: #D9D9D9;
+$white: #EDEDED;
 $red: #8C0000;
 $green: #008C23;
 $blue: #3429A6;
 $yellow: #E6D273;
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: 500;
+}

@@ -9,8 +9,10 @@ export default function Home(props) {
     return (
         <div className='home-wrapper'>
             <nav className='nav-header'>
+                <div className='nav-placeholder'></div>
                 <h1>Budget Application</h1>
                 <span>$ Icon</span>
+                <div className='nav-placeholder2'></div>
             </nav>
             <main className='main-section'>
                 <div className='main-column-left'>
@@ -39,11 +41,11 @@ export default function Home(props) {
                     <Calendar />
                 </div>
             </main>
-            <footer>
-                <h3>Add Bill</h3>
-                <div className='bill-name-wrapper'>
-                    <h3>Bill Name</h3>
-                    <input type='text' className='' />
+            <footer className='page-footer'>
+                <h3 className='footer-header'>Add Bill</h3>
+                <div className='add-bill-wrapper'>
+                    <Input propClass='bill-name' label='Bill Name' inputType='text' icon='&#43' />
+                    <Input propClass='bill-category' label='Bill Category' inputType='text' icon='&#43' />
                 </div>
             </footer>
         </div>
