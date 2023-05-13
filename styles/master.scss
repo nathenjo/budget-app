@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
 
+@import './variables.scss';
+
 body {
     font-family: 'Crimson Pro', serif;
+    background-color: $background;
 }
 
 @import './components/calendar.scss';
+@import './components/input.scss';
