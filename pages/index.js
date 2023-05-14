@@ -23,11 +23,8 @@ export default function Home(props) {
                             <option>Checkbook Date 5-12-2023</option>
                         </select>
                     </div>
-                    <Input propClass='income' label='Income' inputType='text' icon='&#43' />
-                    <div className='bills-wrapper'>
-                        <h3>Bills</h3>
-                        <input type='text' className='bills-input' />
-                    </div>
+                    <Input propClass='income' inputType='text' />
+                    <Input propClass='bills' inputType='text' />
                     <div className='leftover-wrapper'>
                         <h3>Leftover</h3>
                         <input type='text' className='leftover-input' />
@@ -44,8 +41,8 @@ export default function Home(props) {
             <footer className='page-footer'>
                 <h3 className='footer-header'>Add Bill</h3>
                 <div className='add-bill-wrapper'>
-                    <Input propClass='bill-name' label='Bill Name' inputType='text' icon='&#43' />
-                    <Input propClass='bill-category' label='Bill Category' inputType='text' icon='&#43' />
+                    <Input propClass='bill-name' inputType='text' />
+                    <Input propClass='bill-category' inputType='text' />
                 </div>
             </footer>
         </div>
