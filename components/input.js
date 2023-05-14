@@ -11,10 +11,7 @@ export default function Input(props) {
     return (
         <div className={`comp-input ${propClass}-wrapper`}>
             <h3 className={`${propClass}-label`}>{label}</h3>
-            <section className={`${propClass}-input-section`}>
-                <input type={inputType} className={`${propClass}-input`} />
-                <span className={`${propClass}-icon`}>{formatIcon(icon)}</span>
-            </section>
+            <input type={inputType} className={`${propClass}-input`} />
         </div>
     );
 }

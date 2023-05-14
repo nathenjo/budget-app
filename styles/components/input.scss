@@ -1,24 +1,25 @@
 .comp-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     h3 {
-        font-size: 1.3em;
+        font-size: 40px;
     }
 
-    section {
-        display: flex;
-        align-items: center;
-        gap: 4px;
+    input {
+        font-size: 20px;
+        text-align: center;
         background-color: $white;
-        padding: 5px;
+        border: 1px solid $black;
         border-radius: 5px;
-        input {
-            background-color: $white;
-            border: 1px solid $black;
+        height: 35px;
+        padding-left: 10px;
+        transition: 0.3s all ease;
+        @include input-shadow-box;
+        &:focus, &:focus-visible {
             border-radius: 15px;
-            height: 25px;
-            padding-left: 10px;
-        }
-        span {
-            font-size: 2em;
+            border: 1px solid $blue;
+            outline: 5px solid $blue;
         }
     }
 }

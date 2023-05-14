@@ -10,3 +10,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-weight: 500;
 }
+
+@mixin input-shadow-box {
+    box-shadow: 5px 10px 15px 0px rgba(0,0,0,0.50);
+}
