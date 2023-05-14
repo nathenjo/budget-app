@@ -28,6 +28,6 @@ h1, h2, h3, h4, h5, h6 {
         &:focus, &:focus-visible {
             border-radius: 15px;
             border: 1px solid $blue;
-            outline: 5px solid $blue;
+            outline: 3px solid $blue;
         }
 }
