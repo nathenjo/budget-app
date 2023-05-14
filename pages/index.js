@@ -26,10 +26,7 @@ export default function Home(props) {
                     <Input propClass='income' inputType='text' />
                     <Input propClass='bills' inputType='text' />
                     <Input propClass='leftover' inputType='text' />
-                    <div className='add-checkbook-wrapper'>
-                        <button>Add Checkbook</button>
-                        <input type='text' className='new-checkboox-input' />
-                    </div>
+                    <Input propClass='add-checkbook' inputType='text' />
                 </div>
                 <div className='main-column-right'>
                     <Calendar />
