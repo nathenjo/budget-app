@@ -8,19 +8,6 @@
     }
 
     input {
-        font-size: 20px;
-        text-align: center;
-        background-color: $white;
-        border: 1px solid $black;
-        border-radius: 5px;
-        height: 35px;
-        padding-left: 10px;
-        transition: 0.3s all ease;
-        @include input-shadow-box;
-        &:focus, &:focus-visible {
-            border-radius: 15px;
-            border: 1px solid $blue;
-            outline: 5px solid $blue;
-        }
+        @include input-style();
     }
 }
