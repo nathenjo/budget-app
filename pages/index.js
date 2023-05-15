@@ -1,6 +1,7 @@
 import React from 'react';
 import Calendar from '../components/calendar';
 import Input from '../components/input';
+import NewCalendar from '../components/newCalendar';
 
 export default function Home(props) {
 
@@ -29,7 +30,7 @@ export default function Home(props) {
                     <Input propClass='add-checkbook' inputType='text' />
                 </div>
                 <div className='main-column-right'>
-                    <Calendar />
+                    <NewCalendar />
                 </div>
             </main>
             <footer className='page-footer'>
