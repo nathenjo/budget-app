@@ -8,10 +8,11 @@ export default function NewCalendar(props) {
     const [dateChange, setDateChange] = useState('month');
 
     useEffect(() => {
-        
+        console.log('Component mounted');
     }, []);
 
     useEffect(() => {
+        console.log('Date state changed');
         
     }, [curDate])
 
@@ -32,6 +33,12 @@ export default function NewCalendar(props) {
         }
     }
 
+    const getLastDate = () => {
+        let tempDate = new Date(curDate);
+        let lastDayDate = new Date(tempDate.getFullYear(), tempDate.getMonth() + 1, 0);
+        return lastDayDate.getDate();
+    }
+
     return (
         <div className='new-cal'>
             <div className='new-cal__header'>
@@ -43,7 +50,7 @@ export default function NewCalendar(props) {
                 <button onClick={() => changeDate('increase')}>Next Month</button>
             </div>
             <div className='new-cal__main'>
-
+                 
             </div>
             <div className='new-cal__details'>
 

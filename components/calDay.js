@@ -7,8 +7,8 @@ export default function CalDay(props) {
     
 
     return (
-        <div>
-            
+        <div className='calendar-day'>
+            {dayNum}
         </div>
     );
 }
