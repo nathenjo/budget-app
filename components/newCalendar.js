@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 
+import CalDay from './calDay';
+
 export default function NewCalendar(props) {
 
     const {} = props;
 
     const [curDate, setCurDate] = useState(new Date());
     const [dateChange, setDateChange] = useState('month');
+    const [weekArray, setWeekArray] = useState([]);
 
     useEffect(() => {
         console.log('Component mounted');
@@ -13,7 +16,13 @@ export default function NewCalendar(props) {
 
     useEffect(() => {
         console.log('Date state changed');
-        
+        let tempArray = [];
+        let i = 0;
+        while (i < getLastDate()) {
+            tempArray.push('');
+            i++;
+        }
+        setWeekArray(tempArray);
     }, [curDate])
 
     const changeDate = (op) => {
@@ -50,7 +59,9 @@ export default function NewCalendar(props) {
                 <button onClick={() => changeDate('increase')}>Next Month</button>
             </div>
             <div className='new-cal__main'>
-                 
+                {weekArray.map((item, idx) => {
+                    return <CalDay key={idx * 2} dayNum={idx + 1} />
+                })}
             </div>
             <div className='new-cal__details'>
 

@@ -1,15 +1,27 @@
-.cal-row-cell {
-    text-align: center;
+.new-cal {
+    &__header {
+        .current-date-wrapper {
 
-    border-radius: 5px;
-    border: 1px solid transparent;
-    &:hover {
-        cursor: pointer;
-        border: 1px solid black;
+        }
+    }
+    &__main {
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        justify-items: center;
+    }
+    &__details {
+
     }
 }
 
-.selected-day {
-    background-color: red;
-    color: white;
+.calendar-day {
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    &:hover {
+        cursor: pointer;
+        background-color: $white;
+        color: $black;
+    }
 }
