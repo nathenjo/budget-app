@@ -9,6 +9,7 @@ export default function NewCalendar(props) {
     const [curDate, setCurDate] = useState(new Date());
     const [dateChange, setDateChange] = useState('month');
     const [weekArray, setWeekArray] = useState([]);
+    const [selectedDay, setSelectedDay] = useState(new Date().getDate());
 
     useEffect(() => {
         console.log('Component mounted');
@@ -23,7 +24,13 @@ export default function NewCalendar(props) {
             i++;
         }
         setWeekArray(tempArray);
+        setSelectedDay('');
+        styleSelDay();
     }, [curDate])
+
+    useEffect(() => {
+        styleSelDay();
+    }, [selectedDay])
 
     const changeDate = (op) => {
         let tempDate = new Date(curDate);
@@ -48,6 +55,17 @@ export default function NewCalendar(props) {
         return lastDayDate.getDate();
     }
 
+    const styleSelDay = () => {
+        let calDayArray = Array.prototype.slice.call(document.querySelectorAll('.calendar-day'));
+        calDayArray.map((item, index) => {
+            if (item.innerText == selectedDay) {
+                item.classList.add('selected-day')
+            } else {
+                item.classList.remove('selected-day');
+            }
+        })
+    }
+
     return (
         <div className='new-cal'>
             <div className='new-cal__header'>
@@ -60,7 +78,7 @@ export default function NewCalendar(props) {
             </div>
             <div className='new-cal__main'>
                 {weekArray.map((item, idx) => {
-                    return <CalDay key={idx * 2} dayNum={idx + 1} />
+                    return <CalDay key={idx * 2} dayNum={idx + 1} setSelectedDay={setSelectedDay} />
                 })}
             </div>
             <div className='new-cal__details'>

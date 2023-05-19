@@ -19,9 +19,15 @@
     display: flex;
     justify-content: center;
     width: 50%;
+    border-radius: 10px;
     &:hover {
         cursor: pointer;
         background-color: $white;
         color: $black;
     }
+}
+
+.selected-day {
+    background-color: $blue;
+    color: $green;
 }

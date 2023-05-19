@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function CalDay(props) {
 
-    const {dayNum} = props;
+    const {dayNum, setSelectedDay} = props;
 
     const calClick = (e) => {
-        console.log(e.target.innerText);
+        setSelectedDay(e.target.innerText);
     }
 
     return (
