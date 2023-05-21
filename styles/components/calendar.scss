@@ -1,13 +1,68 @@
 .new-cal {
+    margin: 20px 0;
+    background-color: $white;
+    color: $black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
     &__header {
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px dashed $black;
+        padding: 10px 0;
+        .current-month, .current-year {
+            border-bottom: 1px solid transparent;
+            transition: 0.3s all ease;
+            padding: 5px 10px;
+            border-radius: 10px;
+            &:hover {
+                background-color: $blue;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+        .selected-param {
+            background-color: $yellow;
+            color: $black;
+            &:hover {
+                background-color: $yellow;
+                color: $black;
+                border-bottom: 1px solid transparent;
+            }
+        }
+        .date-button {
+            font-family: $font;
+            font-size: 1.2em;
+            border: 1px solid $green;
+            border-radius: 10px;
+            color: $white;
+            background-color: $green;
+            transition: 0.3s all ease;
+            outline: none;
+            &:hover {
+                @include input-shadow-box();
+                cursor: pointer;
+            }
+        }
         .current-date-wrapper {
-
+            font-size: 2em;
+            display: flex;
+            gap: 20px;
         }
     }
     &__main {
         display: grid;
         grid-template-columns: repeat(7,1fr);
+        grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
         justify-items: center;
+        height: 100%;
+
+        .day-header {
+            font-size: 1.5em;
+            font-weight: 500;
+            width: 100%;
+            text-align: center;
+        }
     }
     &__details {
 
@@ -18,16 +73,23 @@
     font-size: 2em;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 50%;
+    height: 50%;
     border-radius: 10px;
+    transition: 0.3s all ease;
     &:hover {
         cursor: pointer;
-        background-color: $white;
-        color: $black;
+        background-color: $green;
+        color: $white;
     }
 }
 
 .selected-day {
-    background-color: $blue;
-    color: $green;
+    background-color: $yellow;
+    color: $black;
+    &:hover {
+        background-color: $yellow;
+        color: $black;
+    }
 }
