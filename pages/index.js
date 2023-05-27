@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Calendar from '../components/calendar';
 import Input from '../components/input';
 import NewCalendar from '../components/newCalendar';
@@ -6,6 +6,8 @@ import NewCalendar from '../components/newCalendar';
 export default function Home(props) {
 
     const {} = props;
+
+    const [selDate, setSelDate] = useState('');
 
     return (
         <div className='home-wrapper'>
@@ -24,10 +26,10 @@ export default function Home(props) {
                             <option>Checkbook Date 5-12-2023</option>
                         </select>
                     </div>
-                    <Input propClass='income' inputType='text' />
-                    <Input propClass='bills' inputType='text' />
-                    <Input propClass='leftover' inputType='text' />
-                    <Input propClass='add-checkbook' inputType='text' />
+                    <Input propClass='income' inputType='text' propPlace='$ 0.00' />
+                    <Input propClass='bills' inputType='text' propPlace='$ 0.00' />
+                    <Input propClass='leftover' inputType='text' propPlace='$ 0.00' />
+                    <Input propClass='add-checkbook' inputType='text' propPlace='Checkbook Name...' />
                 </div>
                 <div className='main-column-right'>
                     <NewCalendar />
@@ -36,8 +38,8 @@ export default function Home(props) {
             <footer className='page-footer'>
                 <h3 className='footer-header'>Add Bill</h3>
                 <div className='add-bill-wrapper'>
-                    <Input propClass='bill-name' inputType='text' />
-                    <Input propClass='bill-category' inputType='text' />
+                    <Input propClass='bill-name' inputType='text' propPlace='Bill Name...' />
+                    <Input propClass='bill-category' inputType='text' propPlace='Bill Category...' />
                 </div>
             </footer>
         </div>

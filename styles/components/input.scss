@@ -8,6 +8,11 @@
     }
 
     input {
+        &::placeholder {
+            font-size: 0.8em;
+            color: $gray;
+            opacity: 0.5;
+        }
         @include input-style();
     }
 }
