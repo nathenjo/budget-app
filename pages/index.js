@@ -8,7 +8,6 @@ export default function Home(props) {
     const {} = props;
 
     useEffect(() => {
-        console.log('Index loaded');
         getCBData();
     }, [])
 
@@ -53,10 +52,34 @@ export default function Home(props) {
                             <option value='5122023' selected>Checkbook Date 5-12-2023</option>
                         </select>
                     </div>
-                    <Input propAttr={[{'name': 'Test Name'}]}propClass='income' inputType='text' propPlace='$ 0.00' />
-                    <Input propClass='bills' inputType='text' propPlace='$ 0.00' />
-                    <Input propClass='leftover' inputType='text' propPlace='$ 0.00' />
-                    <Input propClass='add-checkbook' inputType='text' propPlace='Checkbook Name...' />
+                    <Input
+                        propClass='income'
+                        propAttr={[{
+                            'name': 'Income Input',
+                            'type': 'text',
+                            'placeholder': '$ 0.00'
+                        }]} />
+                    <Input
+                        propClass='bills'
+                        propAttr={[{
+                            'name': 'Bills Input',
+                            'type': 'text',
+                            'placeholder': '$ 0.00'
+                        }]} />
+                    <Input
+                        propClass='leftover'
+                        propAttr={[{
+                            'name': 'Leftover Input',
+                            'type': 'text',
+                            'placeholder': '$ 0.00'
+                        }]} />
+                    <Input
+                        propClass='add-checkbook'
+                        propAttr={[{
+                            'name': 'Checkbook Name Input',
+                            'type': 'text',
+                            'placeholder': 'Checkbook Name...'
+                        }]} />
                 </div>
                 <div className='main-column-right'>
                     <NewCalendar />
@@ -65,8 +88,20 @@ export default function Home(props) {
             <footer className='page-footer'>
                 <h3 className='footer-header'>Add Bill</h3>
                 <div className='add-bill-wrapper'>
-                    <Input propClass='bill-name' inputType='text' propPlace='Bill Name...' />
-                    <Input propClass='bill-category' inputType='text' propPlace='Bill Category...' />
+                    <Input
+                        propClass='bill-name'
+                        propAttr={[{
+                            'name': 'Bill Name Input',
+                            'type': 'text',
+                            'placeholder': 'Bill Name...'
+                        }]} />
+                    <Input
+                        propClass='bill-category'
+                        propAttr={[{
+                            'name': 'Bill Category Input',
+                            'type': 'text',
+                            'placeholder': 'Bill Category...'
+                        }]} />
                 </div>
             </footer>
         </div>

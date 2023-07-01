@@ -8,7 +8,6 @@ export default function Input(props) {
         if (propAttr) {
             propAttr.map(item => {
                 for (const attr in item) {
-                    console.log(attr, item[attr]);
                     document.querySelector(`.${propClass}-input`).setAttribute(attr,item[attr]);
                 }
             })

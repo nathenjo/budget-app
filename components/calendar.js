@@ -28,7 +28,6 @@ export default function Calendar(props) {
 
     // Updates calendar info when currentDay is changed
     useEffect(() => {
-        console.log('CurrentDay|LastDay changed')
         let titleDate = new Date(currentDay);
         getLastDay(titleDate);
         initCal();
